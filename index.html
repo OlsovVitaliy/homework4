@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Function</title>
+</head>
+<body>
+	<script>
+		
+		var height = prompt('Введите высоту');
+		var symbol = prompt('Введите символ');
+	
+		function showTriangle(height, symbol) {
+			var triangle = '';
+		 
+			for (var i = 1; i <= height; i++) {			
+				for (var j = 1; j <= i; j++) {
+					if (countChar(symbol)) {
+						triangle += symbol;
+					}
+				}
+				triangle += '\n'		 		
+			}				
+			alert(triangle);	
+		}
+			
+		function countChar(symbol) {
+		    for (var i = 0; i <= symbol.length; i++) {
+				if (symbol.length !== 1) return false;
+				} 
+			return true;		
+		}			
+    
+		showTriangle(height, symbol);
+        
+
+
+		function f(a, b, c) {
+			a = a || 2;
+			b = b || 3;
+
+			if(typeof c === 'function' ) {
+				return f(c());
+			}
+		
+
+			function sum(a, b) {
+			 	if(c === null || typeof c !== 'function')
+				   return a + b;
+			}
+			return sum(a, b);			
+		}
+
+		var res = f(3,2, f);
+		console.log(res);
+		
+
+	</script>
+</body>
+</html>
